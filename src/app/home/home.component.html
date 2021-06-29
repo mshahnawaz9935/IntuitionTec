@@ -1,0 +1,55 @@
+<div class="container" style="padding-top:20px">
+<div class="example-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[startedList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box1" *ngFor="let item of todo" cdkDrag>
+        <div [hidden]="editTask">{{item}}</div>
+        <input [hidden]="!editTask" type="text" />
+        <img [hidden]="editTask" style="cursor:pointer;" (click)="editTask=!editTask;edit(item)" src="../assets/edit.svg" />
+      </div>
+    </div>
+  </div>
+  <div class="example-container">
+    <h2>Started</h2>
+    <div
+      cdkDropList
+      #startedList="cdkDropList"
+      [cdkDropListData]="started"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box2" *ngFor="let item of started" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  
+  <div class="example-container">
+    <h2>Done</h2>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box3" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-1">
+      <button (click) ="open()" class="btn btn-primary">Add</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-primary">Edit</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+<form #myForm = "ngForm"  (ngSubmit) ="addToList(myForm)" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Task Name</label>
+      <input type="text" name="taskName" [(ngModel)]="taskName" class="form-control" aria-describedby="emailHelp" placeholder="Enter Task" required>
+      <p style="padding-top:2%" >
+        <span *ngIf="myForm.controls.taskName?.errors?.required">Task is required</span>
+    </p>
+    </div>
+    <br/>
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="selectedList" name="selectedList" required>
+          <option *ngFor="let item of lists" [value]="item.value">{{item.name}}</option>
+       </select>
+       <p style="padding-top:2%" >
+        <span *ngIf="myForm.controls.selectedList?.errors?.required">Select an Option</span>
+       </p>
+      </div>
+      <br/>
+    
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary" >Submit</button>
+    
+  </form>
+  
