@@ -83,4 +83,15 @@
   .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
+  .card_title {
+    height: 41px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Open Sans';
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    color:#0055a5;
+}
   

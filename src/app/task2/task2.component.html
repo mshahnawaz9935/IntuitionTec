@@ -1,6 +1,8 @@
+
 <div class="container" style="padding-top:20px">
 <div class="example-container">
-    <h2>To do</h2>
+    <h1 class="card_title">To do</h1>
+   
     <div
       cdkDropList
       #todoList="cdkDropList"
@@ -9,14 +11,13 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)">
       <div class="example-box1" *ngFor="let item of todo" cdkDrag>
-        <div [hidden]="editTask">{{item}}</div>
-        <input [hidden]="!editTask" type="text" />
-        <img [hidden]="editTask" style="cursor:pointer;" (click)="editTask=!editTask;edit(item)" src="../assets/edit.svg" />
+        {{item}}
+        <img style="cursor:pointer;" (click)="edit(item, 1);" src="../assets/edit.svg" />
       </div>
     </div>
   </div>
   <div class="example-container">
-    <h2>Started</h2>
+      <h1 class="card_title">Started</h1>
     <div
       cdkDropList
       #startedList="cdkDropList"
@@ -24,12 +25,13 @@
       [cdkDropListConnectedTo]="[doneList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box2" *ngFor="let item of started" cdkDrag>{{item}}</div>
+      <div class="example-box2" *ngFor="let item of started" cdkDrag> {{item}}
+          <img style="cursor:pointer;" (click)="edit(item, 2);" src="../assets/edit.svg" /></div>
     </div>
   </div>
   
   <div class="example-container">
-    <h2>Done</h2>
+      <h1 class="card_title">Done</h1>
   
     <div
       cdkDropList
@@ -38,18 +40,23 @@
       [cdkDropListConnectedTo]="[todoList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box3" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      <div class="example-box3" *ngFor="let item of done" cdkDrag>{{item}} 
+        <img style="cursor:pointer;" (click)="edit(item, 3);" src="../assets/edit.svg" />
+      </div>
     </div>
   </div>
 
   <br />
 
   <div class="row">
-    <div class="col-1">
-      <button (click) ="open()" class="btn btn-primary">Add</button>
-    </div>
-    <div class="col-1">
-      <button class="btn btn-primary">Edit</button>
+    <div class="col-5">
+      <button (click) ="open()" class="btn btn-primary">Add Task</button>
+      <h3>Drag and Drop to move items from one list to another. Also add button can add new items to a selected list.</p>
     </div>
   </div>
+
+
+
 </div>
+
+
