@@ -167,8 +167,8 @@ export class DialogComponent {
 
 @Component({
   selector: 'app-home',
-  templateUrl: './Task2.component.html',
-  styleUrls: ['./Task2.component.css']
+  templateUrl: './task2.component.html',
+  styleUrls: ['./task2.component.css']
 })
 export class Task2Component implements OnInit {
   constructor(public matDialog : MatDialog,private dataService : DataService) {
