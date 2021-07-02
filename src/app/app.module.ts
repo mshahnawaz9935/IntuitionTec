@@ -11,6 +11,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { Task1Component } from './task1/task1.component';
 import { Task3Component } from './task3/task3.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DxDataGridModule, DxBulletModule, DxTemplateModule } from "devextreme-angular";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,11 @@ import { Task3Component } from './task3/task3.component';
     DragDropModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    DxDataGridModule,
+    DxBulletModule,
+    DxTemplateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
