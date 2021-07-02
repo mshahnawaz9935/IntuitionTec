@@ -13,6 +13,9 @@ import { Task1Component } from './task1/task1.component';
 import { Task3Component } from './task3/task3.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DxDataGridModule, DxBulletModule, DxTemplateModule } from "devextreme-angular";
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,11 @@ import { DxDataGridModule, DxBulletModule, DxTemplateModule } from "devextreme-a
     DxDataGridModule,
     DxBulletModule,
     DxTemplateModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTreeModule,
+    MatIconModule,
+    MatProgressBarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

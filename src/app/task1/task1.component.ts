@@ -1,4 +1,4 @@
-import { NgModule, Component, Pipe, PipeTransform, enableProdMode, OnInit } from '@angular/core';
+import { NgModule, Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,12 +8,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./task1.component.css'],
   providers: [DataService]
 })
+
+// export interface Devices {
+//   devices:object
+// }
+
 export class Task1Component implements OnInit {
 
-  devices:any;
+  devices: any = [];
   constructor(service: DataService, private http:HttpClient) { 
-    this.http.get('http://localhost:4200/assets/devices.json').subscribe
-    (data => this.devices = data);
+    this.http.get('../assets/devices.json').subscribe((data:any) => {
+      this.devices = data.devices ; 
+    console.log('devices', this.devices)});
   }
 
   ngOnInit(): void {
